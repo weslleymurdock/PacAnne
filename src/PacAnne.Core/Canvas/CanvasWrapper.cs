@@ -1,6 +1,5 @@
 ﻿using Blazor.Extensions.Canvas.Canvas2D;
 using Microsoft.AspNetCore.Components;
-using Microsoft.Maui.Controls.Shapes;
 
 namespace PacAnne.Core.Canvas;
 
@@ -26,7 +25,6 @@ public class CanvasWrapper
         Point p = pos;
         p.Offset(_origin.X, _origin.Y);
 
-        // todo: avoid heap allocation
         await _canvas2DContext.SetFillStyleAsync($"rgb({color.Red},{color.Green},{color.Blue})");
 
         await _canvas2DContext.FillTextAsync(text, p.X, p.Y);
@@ -79,27 +77,16 @@ public class CanvasWrapper
 
     public async ValueTask DrawImage(ElementReference spritesheet, Rectangle destRect, Rectangle sourceRect)
     {
-        Point newPoint = new(destRect.X, destRect.Y);
-        newPoint.Offset(newPoint.X, newPoint.Y);
-
-        var r = new Rectangle()
-        {
-            AnchorX = newPoint.X,
-            AnchorY = newPoint.Y,
-            WidthRequest = destRect.DesiredSize.Width,
-            HeightRequest = destRect.DesiredSize.Height
-        };
-
         await _canvas2DContext.DrawImageAsync(
             spritesheet,
             sourceRect.X,
             sourceRect.Y,
             sourceRect.Width,
             sourceRect.Height,
-            r.X,
-            r.Y,
-            r.Width,
-            r.Height);
+            destRect.X + _origin.X,
+            destRect.Y + _origin.Y,
+            destRect.Width,
+            destRect.Height);
     }
 
     public Task Clear(int x, int y, int width, int height) =>
@@ -135,6 +122,6 @@ public class CanvasWrapper
         await _canvas2DContext.StrokeAsync();
     }
 
-    public ValueTask DrawMyText(string text, Vector2 pos, Color color) => 
+    public ValueTask DrawMyText(string text, Vector2 pos, Color color) =>
         DrawText(text, pos.ToPoint(), color, _10point);
 }
