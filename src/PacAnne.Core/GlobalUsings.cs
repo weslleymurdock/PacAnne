@@ -1,4 +1,4 @@
-﻿global using PacAnne.Core.Primitives;
+global using PacAnne.Core.Primitives;
 global using PacAnne.Core.Canvas;
 global using System.Numerics;
 global using MediatR;
@@ -8,3 +8,5 @@ global using PacAnne.Core.Events;
 global using System.Diagnostics.CodeAnalysis;
 global using JetBrains.Annotations;
 global using PacAnne.Core.Requests;
+global using Microsoft.Maui.Graphics;
+global using Rectangle = Microsoft.Maui.Graphics.Rect;
