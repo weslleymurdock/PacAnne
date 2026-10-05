@@ -1,6 +1,5 @@
 ﻿
 using Blazor.Extensions.Canvas.Canvas2D;
-using Microsoft.Maui.Controls.Shapes;
 
 namespace PacAnne.Core.Canvas;
 
@@ -23,13 +22,8 @@ public class MazeCanvas : CanvasWrapper
         var dim = Constants.UnscaledCanvasSize;
 
         await Clear((int)dim.X, (int)dim.Y);
-        Rectangle r = new()
-        {
-            AnchorX = 0,
-            AnchorY = 0,
-            HeightRequest = height,
-            WidthRequest = width
-        };
+        Rectangle r = new(0, 0, width, height);
+
         await DrawImage(
             Spritesheet.Reference,
             new Point(0, 0),
