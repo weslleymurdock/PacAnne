@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 
 using PacAnne.Core.Tweening;
+using Easing = PacAnne.Core.Tweening.Easing;
 
 namespace PacAnne.Core.GameActs;
 
@@ -62,7 +63,7 @@ public class Marquee
         _colorTweener.Update(timing);
 
         var col = (int)(_colorTweener.Position * 255);
-        _color = Color.FromArgb(255, col, col, col);
+        _color = Microsoft.Maui.Graphics.Color.FromRgba(col, col, col, 255);
 
         _tweener?.Update(timing);
 
@@ -91,7 +92,7 @@ public class Marquee
 
     private ValueTask ScrollingIn()
     {
-        Debug.Assert(_tweener != null, $"{nameof(_tweener)} != null");
+        System.Diagnostics.Debug.Assert(_tweener != null, $"{nameof(_tweener)} != null");
 
         _pos = new(_tweener.Position, _current.YPosition);
 
@@ -106,7 +107,7 @@ public class Marquee
 
     private ValueTask ScrollingOut()
     {
-        Debug.Assert(_tweener != null, $"{nameof(_tweener)} != null");
+        System.Diagnostics.Debug.Assert(_tweener != null, $"{nameof(_tweener)} != null");
 
         _pos = new(_tweener.Position, _current.YPosition);
 

@@ -251,7 +251,7 @@ public class AttractAct : IAct
             _instructions.Add(new Instruction {
                 When = clock,
                 Where = new(32, 12),
-                ColouredText = new("CHARACTER / NICKNAME", Color.White),
+                ColouredText = new("CHARACTER / NICKNAME", Colors.White),
             });
 
             var gap = new Vector2(0, 24);

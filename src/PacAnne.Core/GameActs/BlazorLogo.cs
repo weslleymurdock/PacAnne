@@ -15,7 +15,7 @@ public class BlazorLogo
             Vector2.Zero,
             new(547, 160));
 
-        var colorTweeningFunction = Tweener.CreateTweeningFunction<Linear>(Easing.EaseNone);
+        var colorTweeningFunction = Tweener.CreateTweeningFunction<Linear>(Tweening.Easing.EaseNone);
 
         _colorTweener = new(.12f, .8f, 3.Seconds(), colorTweeningFunction);
             

@@ -14,9 +14,9 @@ public class GhostFrightenedMover : GhostMover
         CellIndex cell = (random % 4) switch
         {
             0 => new((int)MazeBounds.TopLeft.X, (int)MazeBounds.TopLeft.Y),
-            1 => new(MazeBounds.Dimensions.Width, 0),
-            2 => new(MazeBounds.Dimensions.Width, MazeBounds.Dimensions.Height),
-            _ => new(0, MazeBounds.Dimensions.Height)
+            1 => new((int)MazeBounds.Dimensions.Width, 0),
+            2 => new((int)MazeBounds.Dimensions.Width, (int)MazeBounds.Dimensions.Height),
+            _ => new(0, (int)MazeBounds.Dimensions.Height)
         };
 
         return new(cell);

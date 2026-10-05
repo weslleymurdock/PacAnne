@@ -2,8 +2,8 @@
 @using Blazor.Extensions
 @using Blazor.Extensions.Canvas.Canvas2D
 @using JetBrains.Annotations
-@using PacMan.GameComponents
-@using PacMan.GameComponents.Audio
+@using PacAnne.Core
+@using PacAnne.Core.Audio
 @using System.Diagnostics
 @using System.Diagnostics.CodeAnalysis
 
@@ -92,7 +92,7 @@
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public ValueTask OnGesture(string name)
     {
-        Debug.WriteLine(name);
+        System.Diagnostics.Debug.WriteLine(name);
         
         if (name == "swipeleft" || name == "panleft")
         {

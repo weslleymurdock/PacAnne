@@ -9,7 +9,7 @@ public class Inky : Ghost
     private readonly IPacMan _pacman;
     private readonly GetBlinkyRequest _getBlinkyRequest;
 
-    public override Color GetColor() => Color.Aqua;
+    public override Color GetColor() => Microsoft.Maui.Graphics.Colors.Aqua;
 
     public override ValueTask<CellIndex> GetScatterTarget() => new(new CellIndex(27, 29));
 

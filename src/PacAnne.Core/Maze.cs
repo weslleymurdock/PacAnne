@@ -248,10 +248,10 @@ public class Maze : ISprite, IMaze
         var y = cell.Y;
 
         x = x < 0 ? 0 : x;
-        x = x > MazeBounds.Dimensions.Width ? MazeBounds.Dimensions.Width : x;
+        x = (int)(x > MazeBounds.Dimensions.Width ? MazeBounds.Dimensions.Width : x);
 
         y = y < 0 ? 0 : y;
-        y = y > MazeBounds.Dimensions.Height ? MazeBounds.Dimensions.Height : y;
+        y = (int)(y > MazeBounds.Dimensions.Height ? MazeBounds.Dimensions.Height : y);
 
         return new(x, y);
     }

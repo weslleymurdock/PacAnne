@@ -96,7 +96,7 @@ public static class MauiProgram
 				c.RegisterServicesFromAssembly(componentsAssembly);
 			});
 
-		services.AddSingleton(new HttpClient { BaseAddress = new(builder.HostEnvironment.BaseAddress) });
+		services.AddSingleton(new HttpClient { BaseAddress = new Uri("http://localhost/") });
 		return builder.Build();
 	}
 }

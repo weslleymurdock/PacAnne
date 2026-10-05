@@ -77,7 +77,7 @@ public class Tile
 
     private void HandleWrapping()
     {
-        float pixelWidthOfMaze = MazeBounds.Dimensions.Width * 8;
+        float pixelWidthOfMaze = (float)(MazeBounds.Dimensions.Width * 8);
 
         if (Index.X < 0)
         {

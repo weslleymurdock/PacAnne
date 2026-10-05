@@ -174,7 +174,7 @@ public class ChaseSubAct
             await _pillLegend.Draw(session);
 
             await session.DrawMyText("10 pts", new(80, 170), PacAnne.Core.Colors.White);
-            await session.DrawMyText("50 pts", new(80, 180), PacANne.Core.Colors.White);
+            await session.DrawMyText("50 pts", new(80, 180), PacAnne.Core.Colors.White);
         }
 
         if (_copyrightVisible)
@@ -196,8 +196,8 @@ public class ChaseSubAct
 
         var gp = _ghosts[0].Position;
 
-        await session.DrawText("STEVE DUNN 2024", new((int)gp.X + 2, (int)(gp.Y + 22)), Color.Black);
-        await session.DrawText("STEVE DUNN 2024", new((int)gp.X, (int)(gp.Y + 20)), Color.Yellow);
+        await session.DrawText("STEVE DUNN 2024", new((int)gp.X + 2, (int)(gp.Y + 22)), Microsoft.Maui.Graphics.Colors.Black);
+        await session.DrawText("STEVE DUNN 2024", new((int)gp.X, (int)(gp.Y + 20)), Microsoft.Maui.Graphics.Colors.Yellow);
     }
 
     private void GhostEaten(AttractGhost ghost)

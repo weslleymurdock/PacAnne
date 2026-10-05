@@ -22,7 +22,7 @@ public class Blinky : Ghost
         _scatterTarget = new(new CellIndex(25, 0));
     }
 
-    public override Color GetColor() => Color.Red;
+    public override Color GetColor() => Colors.Red;
 
     public override ValueTask<CellIndex> GetScatterTarget() => _scatterTarget;
 

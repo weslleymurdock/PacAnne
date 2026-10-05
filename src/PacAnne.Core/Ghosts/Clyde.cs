@@ -21,7 +21,7 @@ public class Clyde : Ghost
         HouseOffset = 1;
     }
 
-    public override Color GetColor() => Color.YellowGreen;
+    public override Color GetColor() => Microsoft.Maui.Graphics.Colors.YellowGreen;
 
     public override ValueTask<CellIndex> GetScatterTarget() => _scatterTarget;
 

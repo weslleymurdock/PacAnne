@@ -19,7 +19,7 @@ public class Pinky : Ghost
         HouseOffset = 0;
     }
 
-    public override Color GetColor() => Color.Pink;
+    public override Color GetColor() => Colors.Pink;
 
     public override ValueTask<CellIndex> GetScatterTarget() => new(new CellIndex(2, 0));
 

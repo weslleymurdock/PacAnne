@@ -9,7 +9,7 @@ public static class Extensions
 
     public static CellIndex ToCellIndex(this Vector2 vector2) => new((int) vector2.X, (int) vector2.Y);
 
-    public static Vector2 ToVector2(this Point point) => new(point.X, point.Y);
+    public static Vector2 ToVector2(this Point point) => new((float)point.X, (float)point.Y);
 
     public static Vector2 ToVector2(this CellIndex cellIndex) => new(cellIndex.X, cellIndex.Y);
 
