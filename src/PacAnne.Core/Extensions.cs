@@ -1,6 +1,5 @@
 ﻿
 using Microsoft.AspNetCore.Components;
-using Microsoft.Maui.Controls.Shapes;
 
 namespace PacAnne.Core;
 
@@ -43,18 +42,6 @@ public static class Extensions
         return value;
     }
 
-    // public static async ValueTask DrawSprite(this ISprite sprite, ElementReference spriteSheet)
-    // {
-    //     if (sprite.Visible)
-    //     {
-    //         spr
-    //         await DrawImage(
-    //             spriteSheet,
-    //             (sprite.Position - sprite.Origin).ToPoint(),
-    //             new Rectangle(sprite.SpriteSheetPos.ToPoint(), sprite.Size));
-    //     }
-    // }
-
     public static async ValueTask DrawSprite(
         this CanvasWrapper session,
         ISprite sprite,
@@ -92,8 +79,10 @@ public static class Extensions
     [Pure]
     public static Rectangle Expand(this Rectangle r, double amount) =>
         new(
-            new((int) (r.Left - amount), (int) (r.Top - amount)),
-            new((int) (r.Width + amount), (int) (r.Height + amount)));
+            r.X - amount,
+            r.Y - amount,
+            r.Width + (amount * 2),
+            r.Height + (amount * 2));
 
     public static Vector2 Floor(this Vector2 point) =>
         new((float) Math.Floor(point.X), (float) Math.Floor(point.Y));
