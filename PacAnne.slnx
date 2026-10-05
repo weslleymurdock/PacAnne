@@ -4,4 +4,7 @@
     <Project Path="src/pacanne.github.io/pacanne.github.io.csproj" />
     <Project Path="src/PacAnne/PacAnne.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PacAnne.UITests/PacAnne.UITests.csproj" />
+  </Folder>
 </Solution>
