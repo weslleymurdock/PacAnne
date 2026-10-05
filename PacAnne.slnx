@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PacAnne.Core/PacAnne.Core.csproj" />
+    <Project Path="src/pacanne.github.io/pacanne.github.io.csproj" />
+    <Project Path="src/PacAnne/PacAnne.csproj" />
+  </Folder>
+</Solution>

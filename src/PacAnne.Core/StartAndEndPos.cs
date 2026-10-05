@@ -1,0 +1,17 @@
+﻿namespace PacAnne.Core;
+
+public class StartAndEndPos
+{
+    public StartAndEndPos(Vector2 start, Vector2 end)
+    {
+        Start = start;
+        End = end;
+    }
+
+    public Vector2 Start { get; }
+
+    public Vector2 End { get; }
+
+    [Pure]
+    public StartAndEndPos Reverse() => new(End, Start);
+}

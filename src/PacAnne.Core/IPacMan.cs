@@ -1,0 +1,24 @@
+﻿namespace PacAnne.Core;
+
+public interface IPacMan
+{
+    bool Visible { get; set; }
+
+    Tile Tile { get; }
+
+    Direction Direction { get; }
+
+    Vector2 Position { get; }
+
+    ValueTask Draw(CanvasWrapper session);
+
+    void StartDying();
+
+    void StartDigesting();
+
+    ValueTask Update(CanvasTimingInformation timing);
+
+    void PillEaten();
+
+    ValueTask HandlePlayerStarting(PlayerStats playerStats, bool isDemo);
+}
